@@ -1,0 +1,24 @@
+@if(!offlineService.isOnline()){
+    <div class="alert alert-danger mb-3">
+        🔴 Offline Mode - Orders will sync when connection returns.
+    </div>
+}
+
+<div class="container-fluid py-4">
+
+    @if(offlineService.isOnline()){
+    
+        <div class="mb-3">
+           <p class="header"> Welcome back!</p>
+           <p class="date">{{ today | date:'EEEE, MMMM d, y | HH:mm':'':'en-US' }}</p>
+        </div>
+    
+    }
+
+    <app-dashboard-stats></app-dashboard-stats>
+
+    <app-kitchen-monitor />
+
+    <app-orders />
+
+</div>

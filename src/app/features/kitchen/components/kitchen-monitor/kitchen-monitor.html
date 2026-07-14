@@ -1,0 +1,85 @@
+<div class="shadow bg-white rounded-3 p-3 my-5">
+
+    <div>
+        <p class="header">Kitchen Load: Real-Time Overview</p>
+        <hr />
+    </div>
+
+    <div class="my-4">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="small-card d-flex justify-content-between align-items-center p-4 shadow">
+                            <div
+                                [style.background-color]="'#F0F6F5'"
+                                class="icon p-2 d-flex justify-content-center align-items-center"
+                            >
+                                <i 
+                                    class="fa-regular fa-alarm-clock"
+                                    [style.color]="'#3BB98A'"    
+                                ></i>
+                            </div>
+                
+                            <div class="text-end">
+                                <p class="title">Active Orders</p>
+                                <strong>{{ kitchen().activeOrders }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="small-card d-flex justify-content-between align-items-center p-4 shadow">
+                            <div
+                                [style.background-color]="'#F0F6F5'"
+                                class="icon p-2 d-flex justify-content-center align-items-center"
+                            >
+                                <i 
+                                    class="fa-regular fa-clock"
+                                    [style.color]="'#3BB98A'"    
+                                ></i>
+                            </div>
+                
+                            <div class="text-end">
+                                <p class="title">Delayed Orders</p>
+                                <strong>{{ kitchen().delayedOrders }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="small-card d-flex justify-content-between align-items-center p-4 shadow">
+                            <div
+                                [style.background-color]="'#F0F6F5'"
+                                class="icon p-2 d-flex justify-content-center align-items-center"
+                            >
+                                <i 
+                                    class="fa-regular fa-flag"
+                                    [style.color]="'#3BB98A'"    
+                                ></i>
+                            </div>
+                
+                            <div class="text-end">
+                                <p class="title">Priority</p>
+                                <strong>{{ kitchen().priority }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center">
+                    <div
+                        class="circle"
+                        [style.background]="
+                            'conic-gradient(#3fc28a ' + kitchen().workload + '%, #eee 0)'
+                        "
+                        >
+                        <span>{{ kitchen().workload }}%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

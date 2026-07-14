@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow bg-white rounded-3 p-3 my-4">
+
+                <p class="header">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                        Menu Search
+                </p>
+
+                <input
+                    type="text"
+                    class="form-control my-3"
+                    placeholder="Search product..."
+                    [formControl]="searchControl">
+
+                <div *ngFor="let product of filteredProducts; trackBy: trackById">
+                    <div class="border rounded p-2 mb-2">
+                        <strong>{{ product.name }}</strong>
+                        <div class="text-muted">
+                        {{ product.category }} - {{ product.price }} EGP
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

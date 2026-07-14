@@ -1,0 +1,55 @@
+<div class="shadow bg-white rounded-3 p-3 my-4">
+    <div class="row">
+        <p class="header">Live Orders</p>
+    
+        <div class="row my-4">
+    
+            <div class="col-md-4">
+                <select
+                    class="form-select"
+                    [formControl]="statusFilter">
+    
+                    @for (option of statusOptions; track option.value) {
+                        <option [value]="option.value">
+                            {{ option.label }}
+                        </option>
+                    }
+    
+                </select>
+            </div>
+    
+            <div class="col-md-4">
+                <select
+                    class="form-select"
+                    [formControl]="channelFilter">
+    
+                    @for (option of channelOptions; track option.value) {
+                        <option [value]="option.value">
+                            {{ option.label }}
+                        </option>
+                    }
+                </select>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="text-end">
+                    <p 
+                        class="clear-filter"
+                        (click)="clearFilter()"    
+                    >
+                        Clear Filters
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    
+        @for (order of orders(); track order.id) {
+            <div class="col-md-4">
+                <app-order-card 
+                    [order]="order"
+                />
+            </div>
+        }
+    </div>
+</div>

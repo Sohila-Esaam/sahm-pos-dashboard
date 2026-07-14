@@ -1,0 +1,22 @@
+export const CUSTOMERS = [
+  'Ahmed Ali',
+  'Sara Mohamed',
+  'Omar Hassan',
+  'Mona Adel',
+  'Youssef Ahmed',
+  'Nour Tarek',
+  'Khaled Samir',
+  'Mariam Ahmed',
+  'Mostafa Ali',
+  'Reem Hassan',
+  'Ali Mahmoud',
+  'Fatma Ibrahim',
+  'Mohamed Adel',
+  'Aya Hassan',
+  'Mahmoud Nasser',
+  'Salma Ali',
+  'Hany Wael',
+  'Menna Ashraf',
+  'Karim Adel',
+  'Habiba Mohamed'
+];

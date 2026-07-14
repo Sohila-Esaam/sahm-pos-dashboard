@@ -1,0 +1,44 @@
+<div class="mt-3 border-top pt-2">
+
+    <small class="fw-bold">
+        🤖 AI Assistant
+    </small>
+
+    @if(recommendations()[order().id]; as recommendation){
+
+        @if(recommendation.loading){
+
+            <p class="text-secondary mt-2">
+                ⏳ {{ recommendation.message }}
+            </p>
+
+        } @else {
+
+            <p
+                class="mt-2"
+                [class.text-warning]="recommendation.type === 'warning'"
+                [class.text-success]="recommendation.type === 'success'"
+                [class.text-info]="recommendation.type === 'info'"
+                [class.text-danger]="recommendation.type === 'error'">
+
+                {{ recommendation.message }}
+
+            </p>
+
+            @if(recommendation.type === 'error'){
+
+                <button
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="retry()">
+
+                    Retry
+
+                </button>
+
+            }
+
+        }
+
+    }
+
+</div>

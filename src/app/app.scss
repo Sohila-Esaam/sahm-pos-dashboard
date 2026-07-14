@@ -1,0 +1,9 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content-wrapper {
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+}

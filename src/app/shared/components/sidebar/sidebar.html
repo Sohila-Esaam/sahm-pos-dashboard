@@ -1,0 +1,63 @@
+<div
+  class="sidebar-container w-100 me-2 mt-2 py-1"
+  [ngClass]="{ 'sidebar-scroll': !isCollapsed }"
+>
+  <div
+    class="sidebar-wrapper"
+    [ngClass]="{ collapsed: isCollapsed }"
+  >
+
+    <!-- Logo -->
+    <div class="sidebar-logo text-center p-3">
+
+      <img
+        [src]="isCollapsed ? '../../../../assets/imgs/Logo.png' : '../../../../assets/imgs/mini-logo.png'"
+        alt="Logo"
+      >
+
+      <button
+        *ngIf="isClosable"
+        (click)="toggleSidebar()"
+        class="sidebar-btn"
+        [ngClass]="{ 'collapsed-btn': isCollapsed }"
+      >
+        <i
+          class="fa-solid"
+          [ngClass]="isCollapsed ? 'fa-chevron-right' : 'fa-chevron-left'"
+        ></i>
+      </button>
+
+    </div>
+
+
+    <!-- Menu -->
+    <div class="sidebar-links mt-4">
+
+      <div
+        *ngFor="let item of menuItems"
+        class="menu-item"
+        [routerLink]="item.path"
+        (click)="setActiveLink(item.label)"
+        [ngClass]="{
+          'active-link': activeLink === item.label
+        }"
+      >
+
+        <i
+          [ngClass]="item.icon"
+          class="menu-icon"
+        ></i>
+
+        <span
+          *ngIf="!isCollapsed"
+          class="menu-label"
+        >
+          {{ item.label }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

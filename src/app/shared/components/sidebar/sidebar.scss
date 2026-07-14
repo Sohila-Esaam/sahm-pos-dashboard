@@ -1,0 +1,165 @@
+.sidebar-container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  max-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.sidebar-scroll {
+  overflow-y: auto;
+}
+
+
+.sidebar-wrapper {
+  width: 250px;
+  height: 97vh;
+  background-color: #a2a1a80d;
+  border-radius: 10px;
+  position: relative;
+  transition: width 0.3s ease;
+  overflow: hidden;
+
+  &.collapsed {
+    width: 85px;
+
+    .menu-label {
+      display: none;
+    }
+
+    .sidebar-logo img {
+      width: 80%;
+    }
+  }
+}
+
+
+/* Logo */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+
+  img {
+    max-width: 80%;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+}
+
+
+/* Toggle button */
+.sidebar-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--bs-primary);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bs-primary);
+  }
+
+  &.collapsed-btn {
+    border-color: transparent;
+  }
+}
+
+
+/* Menu */
+.sidebar-links {
+  margin-top: 20px;
+}
+
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  transition: 0.25s;
+  color: inherit;
+
+  &:hover {
+    background-color: #3BB98A0d;
+    color: var(--bs-primary);
+  }
+}
+
+
+.menu-icon {
+  font-size: 1.25rem;
+  min-width: 25px;
+}
+
+
+.menu-label {
+  font-size: 19px;
+  margin-left: 10px;
+}
+
+
+/* Active route */
+.active-link {
+  color: #3BB98A !important;
+  background-color: #3BB98A0d !important;
+  border-left: 4px solid var(--bs-primary);
+}
+
+
+/* Images */
+img {
+  background-color: transparent;
+}
+
+
+/* RTL */
+:dir(rtl) {
+  .menu-label {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .active-link {
+    border-left: none;
+    border-right: 4px solid var(--bs-primary);
+  }
+}
+
+
+/* Tablet & Mobile */
+@media (max-width: 767px) {
+
+  .sidebar-container {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 15px;
+    border-radius: 25px;
+  }
+
+
+  .sidebar-wrapper {
+    width: 85px;
+    height: 85vh;
+
+    .menu-label {
+      display: none;
+    }
+  }
+
+}
