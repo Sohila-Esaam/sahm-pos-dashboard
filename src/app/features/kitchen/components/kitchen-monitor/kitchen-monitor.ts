@@ -24,13 +24,13 @@ export class KitchenMonitor {
   readonly kitchen = this.kitchenService.kitchen;
 
   constructor() {
-  effect(() => {
-    const priority = this.kitchen().priority;
+    effect(() => {
+      const priority = this.kitchen().priority;
 
-    untracked(() => {
-      this.ordersService.updateOrdersPriority(priority);
+      untracked(() => {
+        this.ordersService.updateOrdersPriority(priority);
+      });
     });
-  });
 }
 
 }

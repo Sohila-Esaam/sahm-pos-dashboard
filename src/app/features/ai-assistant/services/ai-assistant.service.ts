@@ -32,18 +32,18 @@ export class AiAssistantService {
 
             let recommendation: AIRecommendation;
 
-if (Math.random() < 0.15) {
+            if (Math.random() < 0.15) {
 
-  recommendation = {
-    orderId: order.id,
-    loading: false,
-    type: 'error',
-    message: 'AI service unavailable.'
-  };
+            recommendation = {
+                orderId: order.id,
+                loading: false,
+                type: 'error',
+                message: 'AI service unavailable.'
+            };
 
-} else {
+            } else {
 
-  const productNames = order.items.map(item =>
+            const productNames = order.items.map(item =>
                 item.productName.toLowerCase()
             );
 
